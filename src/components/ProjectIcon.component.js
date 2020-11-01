@@ -18,12 +18,12 @@ const ProjectIcon = {
                         m(
                             'h3',
                             {},
-                            'Will Minecraft ever Die?'
+                            vnode.attrs.title
                         ),
                         m(
                             'p',
                             {},
-                            'Just when we though it was gone Minecraft\'s popularity surges...'
+                            vnode.attrs.desc
                         )
                     ]
                 )
