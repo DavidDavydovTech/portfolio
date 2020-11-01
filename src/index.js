@@ -1,5 +1,5 @@
 import m from 'mithril';
-
+import ProjectIcon from './components/ProjectIcon.component';
 var root = document.body
 var count = 0
 
@@ -17,6 +17,7 @@ var Hello = {
             [
                 m(ProjectIcon, {img: './images/minecraft.png'}),
                 m(ProjectIcon, {img: './images/smb.jpg'}),
+                m(ProjectIcon, {img: './images/uplink.jpg'}),
             ]
         )
     }
@@ -27,20 +28,6 @@ var Splash = {
         return m(m.route.Link, {
             href: "/hello"
         }, "Enter!")
-    }
-}
-
-const ProjectIcon = {
-    view: function (vnode) {
-        return(
-            m(
-                'div', 
-                {
-                    class: 'box',
-                    style: `background-image: url("${vnode.attrs.img}")`,
-                }
-            )
-        );
     }
 }
 

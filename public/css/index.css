@@ -6,10 +6,13 @@ body {
 /* From https://css-tricks.com/almanac/properties/b/box-shadow/ */
 .box {
     /* sizing */
-    height: 30vw;
-    width: 20vw;
+    height: 39vw;
+    width: 26vw;
     margin: 2vw;
     border-radius: 1vw;
+    /* text  */
+    font-family: 'Noto Sans JP', sans-serif;
+    color:white;
     /* shadow */
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -25,14 +28,42 @@ body {
     /* fix images not being on the same line */
     display: inline-block;
     /* default transition style */
-    transition: all .2s ease-out;
+    transition: all 0.3s ease-in-out;
+    /* no overflow */
+    overflow: hidden;
 }
-
-/* .box:hover p {
-    transform: scaleY(0.66)
-  } */
-  
+ /* expand on hover */
 .box:hover {
-    transform: scaleY(1.2) scaleX(1.2);
+    transform: scaleY(1.1) scaleX(1.1);
     transform-origin: center;
+}
+/* the inner div  */
+.box .overlay {
+    /* sizing */
+    height: 100%;
+    width: auto;
+    /* spacing */
+    padding: 1vw;
+    /* background color gradiant */
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.9) 15%, rgba(0,0,0,0) 70%);
+    /* default transition style */
+    transition: all 0.3s ease-in-out;
+}  
+ /* the inner div on hover  */
+.box .overlay:hover {
+    /* background color gradiant */
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0) 40%);
+}
+/* header */
+.box .overlay h3 {
+    /* remove margins */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* description */
+.box .overlay p {
+    /* change margin */
+    margin-top: 0.5vw;
+    /* text */
+    /* font-weight: 300; */
 }
