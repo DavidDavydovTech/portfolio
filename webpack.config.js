@@ -6,9 +6,9 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
-  entry: './src/index.js',
+  entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
-    publicPath: './public',
+    publicPath: path.resolve(__dirname, 'public'),
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
@@ -20,15 +20,17 @@ const config = {
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: 'src/index.html' }],
+        patterns: [{ 
+            from: path.resolve(__dirname, 'src', 'index.html') 
+        }],
     }),
-    new HtmlWebpackPlugin({
-      appMountId: 'app',
-      filename: 'index.html'
-    }),
+    // new HtmlWebpackPlugin({
+    //     appMountId: 'app',
+    //     filename: path.resolve(__dirname, 'src', 'index.html') 
+    // }),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      openAnalyzer: false,
+        analyzerMode: 'static',
+        openAnalyzer: false,
     }),
     new CleanWebpackPlugin()
   ]
