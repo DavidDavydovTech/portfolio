@@ -1,9 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
@@ -20,19 +18,19 @@ const config = {
   },
   plugins: [
     new CopyPlugin({
-        patterns: [{ 
-            from: path.resolve(__dirname, 'src', 'index.html') 
-        }],
+        patterns: [
+            { 
+                from: path.resolve(__dirname, 'src', 'index.html') ,
+            },
+            { 
+                from: path.resolve(__dirname, 'public') ,
+            },
+        ],
     }),
-    // new HtmlWebpackPlugin({
-    //     appMountId: 'app',
-    //     filename: path.resolve(__dirname, 'src', 'index.html') 
-    // }),
     new BundleAnalyzerPlugin({
         analyzerMode: 'static',
         openAnalyzer: false,
     }),
-    new CleanWebpackPlugin()
   ]
 };
 
