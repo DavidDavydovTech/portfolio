@@ -13,7 +13,9 @@ var Hello = {
     view:  function () {
         return m(
             'div', 
-            {}, 
+            {
+                class: 'card-holder'
+            }, 
             [
                 m(ProjectIcon, {
                     img: './images/minecraft.png',

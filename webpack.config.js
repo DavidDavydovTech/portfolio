@@ -18,6 +18,7 @@ const config = {
         open: true,
         watchContentBase: true,
         compress: true,
+        historyApiFallback: true,
     },
     module: {
         rules: [{
