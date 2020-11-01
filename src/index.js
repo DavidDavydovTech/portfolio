@@ -3,18 +3,23 @@ import m from 'mithril';
 var root = document.body
 var count = 0
 
-var Minecraft = {
-    view: () => (
-        <div class="box" style="background-image: url('./images/minecraft.png')"/>
-    )
-}
+// var ProjectIcon = {
+//     view: (img) => (
+//         <div class="box" style={`background-image: url("${img}")`}/>
+//     )
+// }
 
 var Hello = {
-    view: () => (
-        <div>
-            <Minecraft/>
-        </div>
-    )
+    view:  function () {
+        return m(
+            'div', 
+            {}, 
+            [
+                m(ProjectIcon, {img: './images/minecraft.png'}),
+                m(ProjectIcon, {img: './images/smb.jpg'}),
+            ]
+        )
+    }
 }
 
 var Splash = {
@@ -25,8 +30,22 @@ var Splash = {
     }
 }
 
-m.route(root, "/splash", {
+const ProjectIcon = {
+    view: function (vnode) {
+        return(
+            m(
+                'div', 
+                {
+                    class: 'box',
+                    style: `background-image: url("${vnode.attrs.img}")`,
+                }
+            )
+        );
+    }
+}
+
+m.route(root, "/projects", {
     "/splash": Splash,
-    "/hello": Hello,
+    "/projects": Hello,
 })
 

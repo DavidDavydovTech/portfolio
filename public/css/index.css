@@ -12,17 +12,15 @@ body {
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12)
-  ;
+    ;
   
     
     
-    min-height: 200px;
-    width: 50vw;
-    margin: 100px auto;
-    background: white;
-    border-radius: 5px;
+    height: 24vh;
+    width: 18vh;
+    margin: 2vh;
+    border-radius: 1vh;
 
-    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
