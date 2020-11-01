@@ -12,6 +12,12 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  devServer: {
+    host: 'localhost',
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8080
+  },
   plugins: [
     new CopyPlugin({
       patterns: [{ from: 'src/index.html' }],
