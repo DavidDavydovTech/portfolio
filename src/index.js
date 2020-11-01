@@ -3,19 +3,23 @@ import m from 'mithril';
 var root = document.body
 var count = 0
 
+var Minecraft = {
+    view: () => (
+        <div class="box" style="background-image: url('./images/minecraft.png')"/>
+    )
+}
+
 var Hello = {
     view: () => (
         <div>
-            <h1 class="title">My First App</h1>
-            <button onclick={() => {count += 1}}>{count} clicks</button>
-            <div class="box">My first app</div>
+            <Minecraft/>
         </div>
     )
 }
 
 var Splash = {
     view: function() {
-        return m("a", {
+        return m(m.route.Link, {
             href: "/hello"
         }, "Enter!")
     }
