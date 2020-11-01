@@ -2,19 +2,28 @@ const webpack = require('webpack');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 
 const config = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
-    publicPath: path.resolve(__dirname, 'public'),
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   devServer: {
     host: 'localhost',
+    port: 8080,
     contentBase: path.join(__dirname, 'dist'),
+    open: true,
+    watchContentBase: true,
     compress: true,
-    port: 8080
+  },
+  resolve: {
+      modules: [
+        path.resolve(__dirname, 'public'),
+        'node_modules'
+      ],
   },
   plugins: [
     new CopyPlugin({
@@ -31,6 +40,7 @@ const config = {
         analyzerMode: 'static',
         openAnalyzer: false,
     }),
+    new CleanWebpackPlugin()
   ]
 };
 
