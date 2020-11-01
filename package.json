@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "mithril": "^2.0.4"
-  },
   "name": "portfolio",
   "version": "0.0.1",
   "description": "Personal portfolio website",
@@ -9,6 +6,13 @@
   "repository": "https://github.com/DavidDavydovTech/portfolio",
   "author": "DavidDavydovTech <davydovjd611@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack src/index.js --output bin/app.js -d --watch",
+    "start-dev": ""
+  },
+  "dependencies": {
+    "mithril": "^2.0.4"
+  },
   "devDependencies": {
     "webpack": "^5.3.2",
     "webpack-cli": "^4.1.0",
