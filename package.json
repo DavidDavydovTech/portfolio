@@ -10,7 +10,7 @@
     "start": "",
     "start-dev": "webpack serve",
     "audit-dev": "lighthouse http://localhost:8080",
-    "build": "webpack -p"
+    "build": "webpack --mode=production"
   },
   "dependencies": {
     "mithril": "^2.0.4"
