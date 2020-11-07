@@ -10,7 +10,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const config = {
     entry: [
         path.resolve(__dirname, 'src', 'index.js'),
-        glob.sync('./src/sass/*.sass'),
+        ...glob.sync('./src/sass/*.sass'),
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
