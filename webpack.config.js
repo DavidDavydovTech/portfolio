@@ -1,12 +1,17 @@
 const webpack = require('webpack');
 const path = require('path');
+// Glob allows us to use wildcards in entries.
+const glob = require('glob');
 const CopyPlugin = require('copy-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 const config = {
-    entry: path.resolve(__dirname, 'src', 'index.js'),
+    entry: [
+        path.resolve(__dirname, 'src', 'index.js'),
+        glob.sync('./src/sass/*.sass'),
+    ],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
