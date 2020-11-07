@@ -21,13 +21,28 @@ const config = {
         historyApiFallback: true,
     },
     module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: /\/node_modules\//,
-            use: {
-                loader: 'babel-loader'
-            }
-        }]
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /\/node_modules\//,
+                use: {
+                    loader: 'babel-loader'
+                },
+            }, {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: { 
+                            outputPath: 'css/', 
+                            name: '[name].min.css',
+                        },
+                    },
+                    'sass-loader',
+                ],
+            },
+        ],
     },
     resolve: {
         modules: [
