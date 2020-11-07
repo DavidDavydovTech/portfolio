@@ -6,11 +6,10 @@ const CopyPlugin = require('copy-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-
 const config = {
     entry: [
         path.resolve(__dirname, 'src', 'index.js'),
-        ...glob.sync('./src/sass/*.sass'),
+        ...glob.sync('./src/css/*.s[ac]ss'),
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
