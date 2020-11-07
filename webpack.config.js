@@ -34,7 +34,7 @@ const config = {
                     loader: 'babel-loader'
                 },
             }, {
-                test: /\.scss$/,
+                test: /\.s[ac]ss$/,
                 exclude: /node_modules/,
                 use: [
                     {
