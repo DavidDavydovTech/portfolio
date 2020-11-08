@@ -24,7 +24,14 @@ var Splash = {
     }
 }
 
-m.route(root, "/home", {
-    "/home": Navbar,
-})
+m(
+    root,
+    {},
+    [
+        Navbar,
+        m.route(root, "/home", {
+            "/home": Navbar,
+        })
+    ]
+)
 
