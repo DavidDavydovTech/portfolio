@@ -4,22 +4,37 @@ import m from 'mithril';
 //         <div class='box' style={`background-image: url('${img}')`}/>
 //     )
 // }
-var root = document.body
-var count = 0 // added a variable
+var root = document.body;
 
 var App = {
   view: () => (
     <>
       <nav>
-        nav
+        <ul>
+          <li>
+            Home Page
+          </li>
+          <li>
+            About Me
+          </li>
+          <li>
+            Projects
+          </li>
+          <li>
+            Blog
+          </li>
+          <li>
+            Contact
+          </li>
+        </ul>
       </nav>
       <div id='content'>
         An unknown error occured
       </div>
     </>
   )
-}
-m.mount(root, App)
+};
+m.mount(root, App);
 
 const Home = {
   view: () => (
@@ -30,7 +45,7 @@ const Home = {
       </button>
     </div>
   )
-}
+};
 
 // Make routes use no prefix
 m.route.prefix = '';
@@ -42,5 +57,5 @@ m.route(contentDiv,
     {
         '/home': Home,
     }
-)
+);
 

@@ -7,4 +7,17 @@ nav {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgba(0,0,0,0.3);
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    height: 40vh;
+    flex-direction: column;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    text-align: right;
+
 }
