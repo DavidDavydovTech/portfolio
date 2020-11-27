@@ -6,7 +6,7 @@ const Logo = () => (
         <a className="text-base dark:text-gray-200">
             <a className="text-green-400 font-black"> .</a>
             tech
-            <a className="text-gray-300 dark:text-gray-600 animate-pulse">nology</a>
+            <a className="text-gray-300 dark:text-gray-6git00 animate-pulse">nology</a>
         </a>
     </a>
 );
