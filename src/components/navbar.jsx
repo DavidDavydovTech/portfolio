@@ -41,7 +41,7 @@ class Navbar extends React.Component {
         </nav>
         <div className="z-20 fixed transition-all duration-500 ease-in-out md:w-1/2 sm:w-screen  h-screen bg-gray-200 dark:bg-gray-800 p-4"
           style={{
-            right: isOpen ? '0%' : '-100%',
+            right: isOpen ? '0vw' : '-110vw',
           }}
         >
           <NavSpacer />
