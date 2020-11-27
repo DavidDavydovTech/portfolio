@@ -1,7 +1,10 @@
 const express = require('express');
+const compression = require('compression')
 const path = require('path');
 const fs = require('fs');
+
 const app = express();
+app.use(compression());
 
 const dist = path.join(__dirname, 'dist');
 fs.readdir(dist, (err, files) => {
@@ -19,4 +22,4 @@ fs.readdir(dist, (err, files) => {
         });
 });
 
-app.listen(8080)
+app.listen(80)
