@@ -39,9 +39,10 @@ class Navbar extends React.Component {
           <Logo className="cursor-default" />
           {this.renderMenuButton()}
         </nav>
-        <div className="z-20 fixed transition-all duration-500 ease-in-out md:w-1/2 sm:w-screen  h-screen bg-gray-200 dark:bg-gray-800 p-4"
+        <div className="z-20 fixed transition-all duration-500 ease-in-out md:w-1/2  h-screen bg-gray-200 dark:bg-gray-800 p-4"
           style={{
-            right: isOpen ? '0vw' : '-110vw',
+            right: isOpen ? '0vw' : `-${window.innerWidth}px`,
+            width: `${window.innerWidth}px`,
           }}
         >
           <NavSpacer />
