@@ -1,6 +1,7 @@
 import React from 'react';
 // Components
 import Logo from './logo';
+import NavSpacer from './navspacer';
 // Icons
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -38,11 +39,12 @@ class Navbar extends React.Component {
           <Logo />
           {this.renderMenuButton()}
         </nav>
-        <div className="z-20 fixed transition-all duration-500 ease-in-out w-screen h-screen bg-gray-200 dark:bg-gray-800 p-4 pt-20"
+        <div className="z-20 fixed transition-all duration-500 ease-in-out w-screen h-screen bg-gray-200 dark:bg-gray-800 p-4"
           style={{
             left: isOpen ? '0%' : '100%',
           }}
         >
+          <NavSpacer />
           <h1 className="text-gray-400 font-bold text-2xl pt-20 text-center">
             <i>More content coming soon!</i>
           </h1>
