@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NavSpacer = () => (
-    <nav className="text-3xl p-4">FILLER DIV</nav>
+    <nav className="text-xl md:text-3xl p-4">Div</nav>
 );
 
 export default NavSpacer;
