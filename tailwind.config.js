@@ -1,3 +1,10 @@
 module.exports = {
-    darkMode: 'media',
+    purge: {
+        enabled: true,
+        content: [
+            './src/**/*.jsx',
+        ],
+    }
+        
+    // darkMode: 'media',
 }
