@@ -4,7 +4,7 @@ module.exports = {
         content: [
             './src/**/*.jsx',
         ],
-    }
+    },
         
-    // darkMode: 'media',
+    darkMode: 'media',
 }
