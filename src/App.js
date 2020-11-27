@@ -1,6 +1,8 @@
 
 import React from "react";
 import { hot } from 'react-hot-loader/root';
+// Components
+import Logo from './components/logo';
 
 class App extends React.Component {
   render() {
@@ -8,14 +10,7 @@ class App extends React.Component {
     return (
       <>
         <h1 className="fixed z-30 w-screen font-mono p-4 pl-8 text-3xl text-gray-100 bg-gray-800 shadow-2xl">
-          <a>
-            David Davydov
-            <a className="text-base text-gray-200 font-600">
-              <a className="text-green-400 font-black"> .</a>
-              tech
-              <a className="text-gray-700">nology</a>
-            </a>
-          </a>
+          <Logo/>
         </h1>
         <div className="z-0 fixed w-screen h-screen bg-gray-700">
           hi
