@@ -8,7 +8,7 @@ import NavSpacer from './components/navspacer';
 const App = () => (
   <>
     <Navbar />
-    <div className="z-0 fixed w-screen h-screen bg-gray-300 dark:bg-gray-700">
+    <div className="z-0 fixed w-screen h-screen bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-gray-100">
       <NavSpacer />
       hi
     </div>
