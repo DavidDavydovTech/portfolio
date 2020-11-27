@@ -39,9 +39,9 @@ class Navbar extends React.Component {
           <Logo />
           {this.renderMenuButton()}
         </nav>
-        <div className="z-20 fixed transition-all duration-500 ease-in-out w-screen h-screen bg-gray-200 dark:bg-gray-800 p-4"
+        <div className="z-20 fixed transition-all duration-500 ease-in-out md:w-1/2 sm:w-screen  h-screen bg-gray-200 dark:bg-gray-800 p-4"
           style={{
-            left: isOpen ? '0%' : '100%',
+            right: isOpen ? '0%' : '-100%',
           }}
         >
           <NavSpacer />
