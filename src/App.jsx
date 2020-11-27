@@ -1,6 +1,7 @@
 
 import React from "react";
 import { hot } from 'react-hot-loader/root';
+import { FaBeer } from 'react-icons/fa';
 // Components
 import Logo from './components/logo';
 
