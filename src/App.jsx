@@ -1,24 +1,16 @@
 
 import React from "react";
 import { hot } from 'react-hot-loader/root';
-import { FaBeer } from 'react-icons/fa';
 // Components
-import Logo from './components/logo';
+import Navbar from './components/navbar';
 
-class App extends React.Component {
-  render() {
-    const { name } = this.props;
-    return (
-      <>
-        <h1 className="fixed z-30 w-screen font-mono p-4 pl-8 text-3xl text-gray-900 bg-gray-200 dark:text-gray-100 dark:bg-gray-800 shadow-2xl">
-          <Logo/>
-        </h1>
-        <div className="z-0 fixed w-screen h-screen bg-gray-300 dark:bg-gray-700">
-          hi
-        </div>
-      </>
-    );
-  }
-}
+const App = () => (
+  <>
+    <Navbar />
+    <div className="z-0 fixed w-screen h-screen bg-gray-300 dark:bg-gray-700">
+      hi
+    </div>
+  </>
+);
 
 export default hot(App);
