@@ -35,7 +35,7 @@ class Navbar extends React.Component {
     const { isOpen } = this.state;
     return (
       <>
-        <nav className="fixed z-30 flex flex-wrap justify-between items-center w-screen font-mono text-xl md:text-3xl p-4 px-3 md:px-8 dark:text-gray-100  text-gray-900 bg-gray-200 dark:bg-gray-800 shadow-2xl">
+        <nav className="fixed z-30 flex flex-wrap justify-between items-center w-screen font-mono text-xl md:text-3xl p-4 px-3 md:px-8 dark:text-gray-100  text-gray-900 bg-gray-100 dark:bg-gray-800 shadow-2xl">
           <Logo className="cursor-default" />
           {this.renderMenuButton()}
         </nav>

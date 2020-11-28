@@ -8,7 +8,7 @@ const HomePage = () => (
     <>
     <h1 className="col-span-full text-3xl mt-10 font-bold mb-2 text-center">About Me</h1>
     <div className="grid grid-cols-6 gap-6 px-4 md:px-16 xl:px-1/3 py-8 font-mono">
-        <div className="col-span-full lg:col-span-4 rounded-lg bg-gray-300 dark:bg-gray-600 shadow-xl p-4 md:p-8">
+        <div className="col-span-full lg:col-span-4 rounded-lg bg-gray-200 dark:bg-gray-600 shadow-xl p-4 md:p-8">
             <h2 className="text-2xl mb-6 font-semibold">My Tech Stack</h2>
             <div className="grid grid-cols-6 gap-1">
                 <b className="col-span-6 md:col-span-1">Frontend:</b>
@@ -31,7 +31,7 @@ const HomePage = () => (
                 </p>
             </div>
         </div>
-        <div className="col-span-full lg:col-span-2 rounded-lg bg-gray-300 dark:bg-gray-600 shadow-xl p-4 md:p-8">
+        <div className="col-span-full lg:col-span-2 rounded-lg bg-gray-200 dark:bg-gray-600 shadow-xl p-4 md:p-8">
             <h2 className="text-2xl mb-3 font-semibold">My Story</h2>
             <p className="text-left text-justify">
                 Deeply interested in technology from the age of 12 
@@ -42,13 +42,13 @@ const HomePage = () => (
                 can go from an idea to a finished product.
             </p>
         </div>
-        <div className="col-span-full rounded-lg bg-gray-300 dark:bg-gray-600 shadow-xl p-4 md:p-8">
+        <div className="col-span-full rounded-lg bg-gray-200 dark:bg-gray-600 shadow-xl p-4 md:p-8">
             <h2 className="text-2xl mb-3 font-semibold">Projects</h2>
             <p className="text-left">
                 Coming soon! 
             </p>
         </div>
-        <div className="col-span-full lg:col-span-2 rounded-lg bg-gray-300 dark:bg-gray-600 shadow-xl p-4 md:p-8 text-lg">
+        <div className="col-span-full lg:col-span-2 rounded-lg bg-gray-200 dark:bg-gray-600 shadow-xl p-4 md:p-8 text-lg">
             <h2 className="text-2xl mb-3 font-semibold">Links</h2>
             <ul>
                 <li>
@@ -61,7 +61,7 @@ const HomePage = () => (
                 </li>
             </ul>
         </div>
-        <div className="col-span-full lg:col-span-4 rounded-lg bg-gray-300 dark:bg-gray-600 shadow-xl p-4 md:p-8">
+        <div className="col-span-full lg:col-span-4 rounded-lg bg-gray-200 dark:bg-gray-600 shadow-xl p-4 md:p-8">
             <h2 className="text-2xl mb-3 font-semibold">Education</h2>
             <div className="mb-3">
                 <span className="flex justify-between mb-2 text-lg">
