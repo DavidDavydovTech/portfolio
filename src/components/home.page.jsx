@@ -84,8 +84,8 @@ const HomePage = () => (
                 <p className="text-left text-justify text-gray-700 dark:text-gray-300 p-1">
                     Recognized as one of the top 10 community colleges in
                     the United States, Kingsborough Community College is
-                    known for it's quality, it's campus by the sea, and 
-                    its quality alumni which can be found in many major companies.
+                    known for its quality, its sea-side campus, and 
+                    its alumni which can be found in many major companies.
                 </p>
             </div>
         </div>
