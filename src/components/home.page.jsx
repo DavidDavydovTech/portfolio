@@ -12,20 +12,20 @@ const HomePage = () => (
             <h2 className="text-2xl mb-6 font-semibold">My Tech Stack</h2>
             <div className="grid grid-cols-6 gap-1">
                 <b className="col-span-6 md:col-span-1">Frontend:</b>
-                <p className="col-span-full md:col-span-5 mt-2 md:mt-0 text-justify md:text-left mb-4">
+                <p className="col-span-full md:col-span-5 mt-2 md:mt-0 md:text-left mb-4">
                     JavaScript, ES6, React, Mithril, Bootstrap, Tailwind CSS,
                     HTML5, CSS3, Pixi.js, Sockets, Redux, Redux Thunk, JQuery, 
                     Bablyon.js, Angular
                 </p>
                 <b className="col-span-6 md:col-span-1">Backend:</b>
-                <p className="col-span-full md:col-span-5 mt-2 md:mt-0 text-justify md:text-left mb-4">
+                <p className="col-span-full md:col-span-5 mt-2 md:mt-0 md:text-left mb-4">
                 Node.js, Express.js, Load Balancing, Mongoose, Reverse Proxy,
                 Sequalize, Authentication, MongoDB, MySQL, Schema Design, 
                 GraphQL, Caching, Apache
 
                 </p>
                 <b className="col-span-6 md:col-span-1">Other:</b>
-                <p className="col-span-full md:col-span-5 mt-2 md:mt-0 text-justify md:text-left">
+                <p className="col-span-full md:col-span-5 mt-2 md:mt-0 md:text-left">
                 Git, Yarn, NPM, Jest, AWS EC2, Git Workflow, Agile Development, 
                 AWS S3, Webpack, Babel, Enzyme, Mocha, Chai, Docker
                 </p>
@@ -33,7 +33,7 @@ const HomePage = () => (
         </div>
         <div className="col-span-full lg:col-span-2 rounded-lg bg-gray-200 dark:bg-gray-600 shadow-xl p-4 md:p-8">
             <h2 className="text-2xl mb-3 font-semibold">My Story</h2>
-            <p className="text-left text-justify">
+            <p className="text-left">
                 Deeply interested in technology from the age of 12 
                 years old I started out programming in Action Script 
                 3 via Adobe Flash. Over the years I've learned many 
@@ -68,7 +68,7 @@ const HomePage = () => (
                     <b>Hack Reactor</b>
                     <i className="text-gray-600 dark:text-gray-400">2020</i>
                 </span>
-                <p className="text-left text-justify text-gray-700 dark:text-gray-300 p-1">
+                <p className="text-left text-gray-700 dark:text-gray-300 p-1">
                     Hack Reactor is a Full Stack and Data Science boot camp
                     run by Galvanize Inc. with a heavy focus on getting
                     alumni ready for junior positions by giving them
@@ -81,7 +81,7 @@ const HomePage = () => (
                     <b>KBCC</b>
                     <i className="text-gray-600 dark:text-gray-400">2016 - 2017</i>
                 </span>
-                <p className="text-left text-justify text-gray-700 dark:text-gray-300 p-1">
+                <p className="text-left text-gray-700 dark:text-gray-300 p-1">
                     Recognized as one of the top 10 community colleges in
                     the United States, Kingsborough Community College is
                     known for its quality, its sea-side campus, and 

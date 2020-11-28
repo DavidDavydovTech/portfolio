@@ -32,7 +32,7 @@ class DarkmodeToggler extends React.Component {
         return (
             <div 
                 onClick={this.toggleColors} 
-                className="fixed z-10 shadow-2xl cursor-pointer transition duration-500 ease transform scale-100 hover:scale-125 bottom-5 md:bottom-10 left-5 md:left-10 bg-gray-700 dark:bg-gray-200 text-gray-200 dark:text-gray-700 rounded-full md:text-3xl"
+                className="fixed z-10 shadow-2xl cursor-pointer transition duration-500 ease transform scale-100 hover:scale-125 bottom-5 md:bottom-10 left-5 md:left-10 bg-gray-700 dark:bg-gray-200 text-gray-200 dark:text-gray-700 rounded-full md:text-3xl overflow-visible"
                 style= {{
                     left: isAtBottom ? '-50vw' : '',
                 }}
