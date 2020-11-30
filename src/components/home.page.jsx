@@ -24,7 +24,7 @@ const HomePage = () => (
                 <b className="col-span-6 md:col-span-1">Backend:</b>
                 <p className="col-span-full md:col-span-5 mt-2 md:mt-0 md:text-left mb-4">
                     Node.js, Express.js, Load Balancing, Mongoose, Reverse Proxy,
-                    Sequalize, Authentication, MongoDB, MySQL, Schema Design, 
+                    Sequelize, Authentication, MongoDB, MySQL, Schema Design, 
                     GraphQL, Caching, Apache
 
                 </p>
