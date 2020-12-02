@@ -27,7 +27,6 @@ const HomePage = () => (
                             Node.js, Express.js, Load Balancing, Mongoose, Reverse Proxy,
                             Sequelize, Authentication, MongoDB, MySQL, Schema Design, 
                             GraphQL, Caching, Apache
-
                         </p>
                         <b className="col-span-6 md:col-span-1">Other:</b>
                         <p className="col-span-full md:col-span-5 mt-2 md:mt-0 md:text-left">
