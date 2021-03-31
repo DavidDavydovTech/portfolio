@@ -18,15 +18,23 @@ class Navbar extends React.Component {
         this.renderMenuButton = this.renderMenuButton.bind(this);
     }
 
-    toggleMenu(e) {
+    toggleMenu() {
         const {isOpen} = this.state;
         this.setState({isOpen: !isOpen});
+    }
+
+    renderLoginButton() {
+        return (
+            <button>
+                <FaUserCircle/>
+            </button>
+        );
     }
 
     renderMenuButton() {
         const {isOpen} = this.state;
         return (
-            <button onClick={this.toggleMenu} className="cursor-pointer">
+            <button onClick={this.toggleMenu}>
                 {isOpen ? <FaTimes/> : <FaBars/>}
             </button>
         );
@@ -39,7 +47,10 @@ class Navbar extends React.Component {
                 <nav
                     className="fixed z-30 flex flex-wrap justify-between items-center w-screen font-mono text-xl md:text-3xl p-4 px-3 md:px-8 dark:text-gray-100  text-gray-900 bg-gray-100 dark:bg-gray-800 shadow-2xl">
                     <Logo className="cursor-default"/>
-                    {this.renderMenuButton()}
+                    <div className="">
+                        {this.renderLoginButton()}
+                        {this.renderMenuButton()}
+                    </div>
                 </nav>
                 <div
                     className="z-20 fixed transition-all duration-500 ease-in-out md:w-1/2  h-screen bg-gray-200 dark:bg-gray-800 p-4"
