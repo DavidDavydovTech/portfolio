@@ -3,7 +3,7 @@ import React from 'react';
 import Logo from './logo';
 import NavSpacer from './navspacer';
 // Icons
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaUserCircle } from 'react-icons/fa';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -25,10 +25,11 @@ class Navbar extends React.Component {
 
   renderMenuButton() {
     const { isOpen } = this.state;
-    if (isOpen) {
-      return <FaTimes onClick={this.toggleMenu} className="cursor-pointer"/>;
-    }
-    return <FaBars onClick={this.toggleMenu} className="cursor-pointer"/>;
+    return (
+        <button onClick={this.toggleMenu} className="cursor-pointer">
+          {isOpen ? <FaTimes/> : <FaBars/>}
+        </button>
+    );
   }
 
   render() {
@@ -37,7 +38,9 @@ class Navbar extends React.Component {
       <>
         <nav className="fixed z-30 flex flex-wrap justify-between items-center w-screen font-mono text-xl md:text-3xl p-4 px-3 md:px-8 dark:text-gray-100  text-gray-900 bg-gray-100 dark:bg-gray-800 shadow-2xl">
           <Logo className="cursor-default" />
-          {this.renderMenuButton()}
+          <button>
+            {this.renderMenuButton()}
+          </button>
         </nav>
         <div className="z-20 fixed transition-all duration-500 ease-in-out md:w-1/2  h-screen bg-gray-200 dark:bg-gray-800 p-4"
           style={{
@@ -49,6 +52,7 @@ class Navbar extends React.Component {
           <h1 className="text-gray-400 font-bold text-2xl pt-20 text-center">
             <i>More content coming soon!</i>
           </h1>
+          <i>Login...</i>
         </div>
       </>
     );
