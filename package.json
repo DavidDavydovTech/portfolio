@@ -21,6 +21,7 @@
     "express-http-proxy": "^1.6.2",
     "express-subdomain": "^1.0.5",
     "forever": "^3.0.4",
+    "recursive-install": "^1.4.0",
     "validator": "^13.5.2"
   },
   "devDependencies": {
