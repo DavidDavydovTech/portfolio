@@ -1,0 +1,26 @@
+{
+  "name": "otzar-hasefer-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DavidDavydovTech/otzar-hasefer-api",
+  "author": "David J. Davydov <davydovjd611@gmail.com>",
+  "license": "NONE",
+  "private": true,
+  "description": "The main API endpoint for Otzar HaSefer",
+  "scripts": {
+    "start": "forever index.js"
+  },
+  "dependencies": {
+    "@jsdevtools/readdir-enhanced": "^6.0.4",
+    "@nano-sql/core": "^2.3.7",
+    "bcrypt": "^5.0.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "forever": "^3.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.8"
+  }
+}

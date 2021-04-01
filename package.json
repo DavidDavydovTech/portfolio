@@ -1,0 +1,29 @@
+{
+  "name": "ddt-router",
+  "version": "1.0.0",
+  "description": "Router for my personal project(s)",
+  "main": "index.js",
+  "repository": "https://github.com/DavidDavydovTech/otzar-hasefer-auth",
+  "author": "David J. Davydov <davydovjd611@gmail.com>",
+  "license": "NONE",
+  "private": true,
+  "scripts": {
+    "start": "forever index.js",
+    "start:dev:local": "API_PORT=9001 API_SUBDOMAIN=api CLIENT_PORT=9000 ROUTER_PORT=443 CERTIFICATE=serverDev.cert PRIVATE_KEY=serverDev.key node index.js"
+  },
+  "dependencies": {
+    "@jsdevtools/readdir-enhanced": "^6.0.4",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.2",
+    "express-subdomain": "^1.0.5",
+    "forever": "^3.0.4",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
