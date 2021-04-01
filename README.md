@@ -18,5 +18,6 @@ _Todo_
 ## Todo
 
  - [ ] Add files to set up SSL certificate CRON jobs.
- - [ ] Add command to automatically re-run NPM install on all subdirectories in `./sites`.
+ - [x] Add command to automatically re-run NPM install on all subdirectories in `./sites`.
  - [ ] Create a section describing how this portfolio router/site combo works.
+ - [ ] Make the `postinstall` and `certbot` cronjob launch a server that tells visitors that the server is being updated.
