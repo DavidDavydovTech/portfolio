@@ -1,13 +1,14 @@
 {
-  "name": "ddt-router",
-  "version": "1.0.0",
-  "description": "Router for my personal project(s)",
+  "name": "portfolio",
+  "version": "2.0.1",
+  "description": "Portfolio + Router for my personal project(s)",
   "main": "index.js",
   "repository": "https://github.com/DavidDavydovTech/otzar-hasefer-auth",
   "author": "David J. Davydov <davydovjd611@gmail.com>",
   "license": "NONE",
   "private": true,
   "scripts": {
+    "postinstall": "npm-recursive-install --skip-root",
     "start": "forever index.js",
     "start:dev:local": "API_PORT=9001 API_SUBDOMAIN=api CLIENT_PORT=9000 ROUTER_PORT=443 CERTIFICATE=serverDev.cert PRIVATE_KEY=serverDev.key node index.js"
   },
