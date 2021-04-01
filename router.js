@@ -17,25 +17,32 @@ const router = Router();
 
 
 // Dynamically add methods/routes to API
-const siteConfigs = readdirSync('./sites', {deep: 2, filter: /.*\.site/, });
+const siteConfigPaths = readdirSync('./sites', {
+  deep: 2,
+  filter: /.*\.site/,
+  sep: '/',
+  basePath: `${__dirname}/sites`
+});
 const usedSubdomains = [];
 console.log('\nINITALIZING ROUTES:\n')
-for (let siteConfig of siteConfigs) {
+for (let siteConfigPath of siteConfigPaths) {
   let siteApp;
-  console.log(siteConfig)
+  console.log('SITE CONFIG PATH', siteConfigPath)
+  const site = require(siteConfigPath);
+  console.log('SITE OBJECT', site)
   const {
     type,
     location,
     subdomains
-  } = site = require(`./sites/${siteConfig}`);
+  } = site;
   // Initialize the 'App' for this site.
   if (type.toLowerCase() === 'file') {
-    siteApp = require(`./sites/${siteConfig}/${location}`);
+    siteApp = require(`./sites/${siteConfigPath}/${location}`);
   } else if (type.toLowerCase() === 'url') {
     siteApp = proxy(location);
   } else throw new Error(`Invalid .site type "${type}"<${typeof type}>.`)
   // Now assign the 'App' to every subdomain given.
-  subdomains.forEach( subdomain => {
+  subdomains.forEach(subdomain => {
     let useSubdomain = subdomain !== '__DEFAULT__';
     if (useSubdomain) {
       router.use(expressSubdomain(subdomain, siteApp));
