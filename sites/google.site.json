@@ -1,0 +1,5 @@
+{
+  "type": "url",
+  "location": "https://google.com",
+  "subdomains": ["google"]
+}
