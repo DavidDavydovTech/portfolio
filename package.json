@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Portfolio + Router for my personal project(s)",
   "main": "index.js",
   "repository": "https://github.com/DavidDavydovTech/otzar-hasefer-auth",
@@ -10,7 +10,7 @@
   "scripts": {
     "postinstall": "npm-recursive-install --skip-root",
     "start": "forever index.js",
-    "start:dev:local": "API_PORT=9001 API_SUBDOMAIN=api CLIENT_PORT=9000 ROUTER_PORT=443 CERTIFICATE=serverDev.cert PRIVATE_KEY=serverDev.key node index.js"
+    "start:dev": "ROUTER_PORT=8443 CERTIFICATE=serverDev.cert PRIVATE_KEY=serverDev.key node index.js"
   },
   "dependencies": {
     "@jsdevtools/readdir-enhanced": "^6.0.4",
