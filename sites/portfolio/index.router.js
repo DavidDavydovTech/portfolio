@@ -15,7 +15,7 @@ const { join } = require('path');
 // -- Set up Vars --
 const app = express();
 const router = express.Router();
-const pathToDist = join(__dirname, 'front', 'build');
+const pathToDist = join(__dirname, 'frontend', 'dist');
 let fileArray = [];
 console.log(`Path to Dist:`, pathToDist);
 
