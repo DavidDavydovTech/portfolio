@@ -47,7 +47,7 @@ for (let siteConfigPath of siteConfigPaths) {
     if (useSubdomain) {
       router.use(expressSubdomain(subdomain, siteApp));
     } else {
-      router.use('/', siteApp);
+      app.use('/', siteApp);
     }
     usedSubdomains.push(useSubdomain ? subdomain : '__DEFAULT__');
   });
