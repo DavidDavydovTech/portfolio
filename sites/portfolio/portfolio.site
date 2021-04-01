@@ -1,5 +1,0 @@
-module.exports = {
-    type: 'file',
-    location: './index.router.js',
-    subdomains: ['__DEFAULT__']
-};
