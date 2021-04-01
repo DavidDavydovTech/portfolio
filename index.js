@@ -28,7 +28,3 @@ const server = createServer({cert, key}, router);
 // -- Launch app --
 console.log(ROUTER_PORT);
 server.listen(ROUTER_PORT);
-
-
-
-
