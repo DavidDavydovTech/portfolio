@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
     }
   }))
   .then( queryResult => {
-    res.cookie('otzarHaSeferAuth', queryResult[0].id)
+    res.cookie('david-davydov-tech_auth', queryResult[0].id)
     res.status(200).send('Logged in successfully...')
   })
   .catch( (err) => {

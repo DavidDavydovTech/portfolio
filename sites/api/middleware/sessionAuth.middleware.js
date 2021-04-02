@@ -32,12 +32,12 @@ cleanExpiredSessionsInterval(5);
 
 // -- Exports --
 module.exports = (req, res, next) => {
-  const { otzarHaSeferAuth } = req.cookies;
+  const { "david-davydov-tech_auth": ddtAuth } = req.cookies;
   req.userInfo = null;
-  if (typeof otzarHaSeferAuth === 'string') {
+  if (typeof ddtAuth === 'string') {
     nSQL('sessions')
       .query('select')
-      .where(['id', '=', otzarHaSeferAuth])
+      .where(['id', '=', ddtAuth])
       .exec()
       .then(selected => {
         if (selected.length < 1) {
@@ -70,7 +70,7 @@ module.exports = (req, res, next) => {
               }
             }))
             .then(queryResult => {
-              res.cookie('otzarHaSeferAuth', queryResult[0]);
+              res.cookie('david-davydov-tech_auth', queryResult[0]);
               return new Promise((resolve, reject) => {
                 verify(queryResult[0].token, 'testSecret', (err, decoded) => {
                   if (err) {
@@ -89,7 +89,7 @@ module.exports = (req, res, next) => {
         req.userInfo = userData;
       })
       .catch(err => {
-        res.clearCookie('otzarHaSeferAuth');
+        res.clearCookie('david-davydov-tech_auth');
         console.log('ERROR MESSAGE:', err.message);
       })
   }
