@@ -12,7 +12,7 @@ const blogSchema = Schema({
     type: String,
     required: true,
     validate: [{
-        validator: val => val.length >= 1 ? true : false,
+        validator: val => val.length >= 1,
         msg: 'Name key must be at least 1 characters long'
       },
     ]
