@@ -1,9 +1,9 @@
 // -- Package Imports --
-const  { Schema, model } = require('mongoose');
+const  { Schema, model, ObjectId } = require('mongoose');
 
 
 // -- Constants --
-const visibilityTypes = ['promoted', 'visable', 'hidden', 'invisible'];
+const visibilityTypes = ['promoted', 'visible', 'hidden', 'invisible'];
 
 
 // -- Schema --
@@ -33,9 +33,9 @@ const blogSchema = Schema({
     type: String,
     required: true,
   },
-  visability: {
+  visibility: {
     type: String,
-    default: 'visable',
+    default: 'visible',
     validate: [{
         validator: val => visibilityTypes.includes(val),
         msg: `Status must be one of the following: ${visibilityTypes.join(', ').slice(0, -2)}`
@@ -54,10 +54,14 @@ const blogSchema = Schema({
     type: [String],
     required: true,
   },
-  author: {
-    type: String,
+  authorId: {
+    type: ObjectId,
     required: true,
   },
+  categories: [{
+    name: String,
+    color: String,
+  }],
 });
 
 
