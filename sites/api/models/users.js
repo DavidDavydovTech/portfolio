@@ -1,23 +1,30 @@
 // -- Package Imports --
 const  { Schema, model } = require('mongoose');
 
+
 // -- Schema --
 const usersSchema = Schema({
   firstName: {
     type: String,
     required: true,
     validate: [{
-        validator: val => val.length > 1 ? true : false,
-        msg: 'First name must be at least 2 characters long.'
-      }, {
-        validator: val => val.length <= 50 ? true : false,
-        msg: 'Your first name must be 50 characters at most.'
-      },
-    ]
+      validator: val => val.length > 1,
+      msg: 'Your first name must be at least 1 characters long.'
+    }, {
+      validator: val => val.length <= 50,
+      msg: 'Your first name must be 50 characters at most.'
+    }],
   },
   lastName: {
     type: String,
-    required: true
+    required: true,
+    validate: [{
+      validator: val => val.length > 1,
+      msg: 'Your last name must be at least 1 characters long.'
+    }, {
+      validator: val => val.length <= 50,
+      msg: 'Your last name must be 50 characters at most.'
+    }],
   },
   email: {
     type: String,
@@ -28,10 +35,10 @@ const usersSchema = Schema({
     type: String,
     required: true
   },
-  // admin: {
-  //   type: Boolean,
-  //   default: false
-  // }
+  admin: {
+    type: Boolean,
+    default: false
+  }
 });
 
 
