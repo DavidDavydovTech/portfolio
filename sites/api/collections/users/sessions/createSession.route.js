@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
   .then( user => new Promise((resolve, reject) => {
     compare(password, user.password, function(err, doesMatch) {
       if (err) reject(err);
-      if (doesMatch === false) reject(new Error('Invalid Email/Password combination.'));
+      if (doesMatch === false) reject(new Error('Invalid Password combination.'));
       resolve(user);
     });
   }))

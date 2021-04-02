@@ -35,6 +35,7 @@ module.exports = (req, res, next) => {
   const { "david-davydov-tech_auth": ddtAuth } = req.cookies;
   req.userInfo = null;
   if (typeof ddtAuth === 'string') {
+    console.log('ID', ddtAuth)
     nSQL('sessions')
       .query('select')
       .where(['id', '=', ddtAuth])
@@ -70,6 +71,7 @@ module.exports = (req, res, next) => {
               }
             }))
             .then(queryResult => {
+              console.log(queryResult[0])
               res.cookie('david-davydov-tech_auth', queryResult[0]);
               return new Promise((resolve, reject) => {
                 verify(queryResult[0].token, 'testSecret', (err, decoded) => {

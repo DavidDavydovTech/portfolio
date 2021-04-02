@@ -12,7 +12,11 @@ const router = Router();
 // -- Routes --
 router.post('/', (req, res) => {
   const newBlog = req.body;
-   
+  if (req.userInfo.admin === false) {
+    console.log('Sorry you must be an admin to do this')
+  } else if (req.userInfo.admin === true) {
+    console.log('Wow!')
+  }
   Blog.create(newBlog)
     .then((dbRes) => {
       res.status(200).send(dbRes);
