@@ -41,7 +41,7 @@ console.log(fileArray);
 // Be right back going to check something
 router.get('/*', (req, res) => {
   const pathMatches = req.originalUrl.match(/((?<=\/)([^?#]*)|(\/))/g);
-  console.log('Current req path is:', pathMatches)
+  console.log(`[${req.ip}] Current req path is:`, pathMatches)
   if (pathMatches[0] === '/' && pathMatches[1] === '') {
     const completePath = join(pathToDist, 'index.html');
     res.status(200).sendFile(completePath);
