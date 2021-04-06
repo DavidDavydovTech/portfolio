@@ -41,6 +41,7 @@ module.exports = (req, res, next) => {
       .where(['id', '=', ddtAuth])
       .exec()
       .then(selected => {
+        console.log('SELECTED:', selected)
         if (selected.length < 1) {
           throw new Error('Your login has expired or someone else has logged in with your account, please login again.');
         } else {
@@ -71,7 +72,7 @@ module.exports = (req, res, next) => {
               }
             }))
             .then(queryResult => {
-              console.log(queryResult[0])
+              console.log('QUERY RESULT:', queryResult[0])
               res.cookie('david-davydov-tech_auth', queryResult[0]);
               return new Promise((resolve, reject) => {
                 verify(queryResult[0].token, 'testSecret', (err, decoded) => {
@@ -89,11 +90,15 @@ module.exports = (req, res, next) => {
       })
       .then(userData => {
         req.userInfo = userData;
+        next();
       })
       .catch(err => {
         res.clearCookie('david-davydov-tech_auth');
+        res.send(err);
         console.log('ERROR MESSAGE:', err.message);
       })
+  } else {
+    // TODO: Make req.userInfo a 'default user'.
+    next();
   }
-  next();
 };
