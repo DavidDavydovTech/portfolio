@@ -9,9 +9,9 @@
   "scripts": {
     "postinstall": "npm run build",
     "clean": "rm dist/bundle.js",
-    "build-dev": "webpack --mode development",
+    "build:dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start-dev": "webpack serve --hot --mode development",
+    "start:dev": "webpack serve --hot --mode development",
     "start": "forever server.js",
     "test": "jest"
   },
