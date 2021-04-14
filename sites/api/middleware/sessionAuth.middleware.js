@@ -41,13 +41,12 @@ module.exports = (req, res, next) => {
     admin: false,
   };
   if (typeof ddtAuth === 'string') {
-    console.log('ID', ddtAuth)
+    // console.log('ID', ddtAuth)
     nSQL('sessions')
       .query('select')
       .where(['id', '=', ddtAuth])
       .exec()
       .then(selected => {
-        console.log('SELECTED:', selected)
         if (selected.length < 1) {
           throw new Error('Your login has expired or someone else has logged in with your account, please login again.');
         } else {
@@ -78,7 +77,7 @@ module.exports = (req, res, next) => {
               }
             }))
             .then(queryResult => {
-              console.log('QUERY RESULT:', queryResult[0])
+              // console.log('QUERY RESULT:', queryResult[0])
               res.cookie('david-davydov-tech_auth', queryResult[0]);
               return new Promise((resolve, reject) => {
                 verify(queryResult[0].token, 'testSecret', (err, decoded) => {
