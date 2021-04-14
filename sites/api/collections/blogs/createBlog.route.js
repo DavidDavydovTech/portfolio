@@ -13,18 +13,18 @@ const router = Router();
 router.post('/', (req, res) => {
   const newBlog = req.body;
   if (req.userInfo.admin === false) {
-    console.log('Sorry you must be an admin to do this')
-  } else if (req.userInfo.admin === true) {
-    console.log('Wow!')
+    res.status(403).send('Sorry you must be an admin to do this.');
+  } else {
+    Blog.create(newBlog)
+      .then((dbRes) => {
+        res.status(200).send(dbRes);
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(400).send(err.message);
+      });
   }
-  Blog.create(newBlog)
-    .then((dbRes) => {
-      res.status(200).send(dbRes);
-    })
-    .catch((err) => {
-      console.log(err)
-      res.status(400).send(err.message);
-    });
+
 });
 
 // -- Exports --

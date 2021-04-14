@@ -12,60 +12,26 @@ const router = Router();
 
 // -- Routes --
 router.get('/', (req, res) => {
-  const {
+  let {
     _id,
-    showHidden,
-    langCode,
-  } = req.query;
+    visibility = ['promoted', 'visible', ...(_id ? ['hidden'] : [])],
+  } = req.body;
 
-  if (_id) {
-    const filter = { _id };
-    if (langCode) {
-      Blog.findOne(filter)
-        .then((blogPost) => {
-          res.status(200).send(blogPost[langCode]);
-        })
-        .catch((err) => {
-          console.log(err);
-          res.status(500).send(err.message);
-        });
-    } else {
-      Blog.findOne(filter)
-        .then((blogPost) => {
-          res.status(200).send(blogPost);
-        })
-        .catch((err) => {
-          console.log(err);
-          res.status(500).send(err.message);
-        });
-    }
+  if (req.userInfo.admin === false && visibility.includes('invisible')) {
+    res.status(403).send('Sorry you must be an admin to do this.');
   } else {
-    if (langCode) {
-      Blog.find()
-        .then((blogPosts) => {
-          blogPosts = blogPosts.map( e => {
-            console.log('LANG CODE:', langCode)
-            const filteredBlog = e[langCode];
-            if (filteredBlog) filteredBlog._id = e._id;
-            return filteredBlog;
-          });
-          res.status(200).send(blogPosts);
-        })
-        .catch((err) => {
-          console.log(err);
-          res.status(500).send(err.message);
-        });
-    } else {
-      Blog.find()
-        .then((blogPosts) => {
-          res.status(200).send(blogPosts);
-        })
-        .catch((err) => {
-          console.log(err);
-          res.status(500).send(err.message);
-        });
-    }
+    const filter = { ...(_id ? {_id} : {}), visibility: {$in: visibility} };
+
+    Blog[_id ? 'findOne' : 'find'](filter)
+      .then((blogPost) => {
+        res.status(200).send(blogPost);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).send(err.message);
+      });
   }
+
 });
 
 

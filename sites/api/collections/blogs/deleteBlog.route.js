@@ -11,15 +11,19 @@ const router = Router();
 
 // -- Routes --
 router.delete('/', (req, res) => {
-  const { _id } = req.query;
-  Blog.deleteOne({ _id })
-    .then((dbRes) => {
-      res.status(200).send(dbRes);
-    })
-    .catch((err) => {
-      console.log(err)
-      res.status(400).send(err.message);
-    });
+  const { _id } = req.body;
+  if (req.userInfo.admin === false) {
+    res.status(403).send('Sorry you must be an admin to do this.');
+  } else {
+    Blog.deleteOne({ _id })
+      .then((dbRes) => {
+        res.status(200).send(dbRes);
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(400).send(err.message);
+      });
+  }
 });
 
 // -- Exports --

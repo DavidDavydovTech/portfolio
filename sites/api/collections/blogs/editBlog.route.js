@@ -15,16 +15,19 @@ router.put('/', (req, res) => {
   const { _id } = req.body;
   const updatedBlog = Object.assign({}, req.body);
   delete updatedBlog._id;
-
-  Blog.updateOne({_id}, updatedBlog).exec()
-    .then((dbRes) => {
-      console.log(dbRes)
-      res.status(200).send(dbRes);
-    })
-    .catch((err) => {
-      console.log(err)
-      res.status(400).send(err.message);
-    });
+  if (req.userInfo.admin === false) {
+    res.status(403).send('Sorry you must be an admin to do this.');
+  } else {
+    Blog.updateOne({_id}, updatedBlog).exec()
+      .then((dbRes) => {
+        console.log(dbRes)
+        res.status(200).send(dbRes);
+      })
+      .catch((err) => {
+        console.log(err)
+        res.status(400).send(err.message);
+      });
+  }
 });
 
 // -- Exports --
