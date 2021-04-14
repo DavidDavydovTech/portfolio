@@ -33,7 +33,13 @@ cleanExpiredSessionsInterval(5);
 // -- Exports --
 module.exports = (req, res, next) => {
   const { "david-davydov-tech_auth": ddtAuth } = req.cookies;
-  req.userInfo = null;
+  req.userInfo = {
+    firstName: null,
+    lastName: null,
+    email: null,
+    password: null,
+    admin: false,
+  };
   if (typeof ddtAuth === 'string') {
     console.log('ID', ddtAuth)
     nSQL('sessions')
