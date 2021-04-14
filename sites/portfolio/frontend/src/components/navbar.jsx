@@ -26,7 +26,7 @@ class Navbar extends React.Component {
     renderLoginButton() {
         return (
             <button>
-                <FaUserCircle/>
+                <FaUserCircle className="mr-4"/>
             </button>
         );
     }
