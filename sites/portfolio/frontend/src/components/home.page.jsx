@@ -1,8 +1,45 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import {
     SiGithub,
     SiLinkedin
 } from 'react-icons/si';
+
+const Projects = () => {
+    const [projects, setProjects] = useState(null);
+    const [didCall, setDidCall] = useState(false);
+    const [retryTime, setRetryTime] = useState(5000);
+
+    useEffect(() => {
+        if (projects === null && didCall === false) {
+            setDidCall(true);
+            axios({
+                method: 'get',
+                url: 'https://api.dd.tech/projects',
+
+            })
+                .then((res) => {
+                    setProjects(res.data);
+                })
+                .catch((err) => {
+                    console.warn(err);
+                    setTimeout(() => {
+                        setDidCall(false);
+                        setRetryTime(retryTime * 2);
+                    }, retryTime);
+                });
+        }
+    })
+    if (projects === null || didCall === false) {
+        return <i>Loading...</i>;
+    } else if (projects.length === 0) {
+        return <i>Projects coming soon!</i>;
+    } else {
+        return (
+            <h1>Wow!</h1>
+        );
+    }
+}
 
 const HomePage = () => (
     <div className="flex justify-center">
@@ -48,7 +85,7 @@ const HomePage = () => (
                 <div className="col-span-full rounded-lg bg-gray-100 dark:bg-gray-600 shadow-xl p-4 md:p-8">
                     <h2 className="text-2xl mb-3 font-semibold">Projects</h2>
                     <p className="text-left">
-                        <i>Coming soon!</i>
+                        {Projects()}
                     </p>
                 </div>
                 <div className="col-span-full lg:col-span-2 rounded-lg bg-gray-100 dark:bg-gray-600 shadow-xl p-4 md:p-8 text-lg">
