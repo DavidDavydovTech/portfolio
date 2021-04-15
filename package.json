@@ -10,7 +10,7 @@
   "scripts": {
     "postinstall": "npm-recursive-install --skip-root",
     "start": "forever index.js",
-    "start:dev": "ROUTER_PORT=443 CERTIFICATE=serverDev.cert PRIVATE_KEY=serverDev.key node index.js"
+    "start:dev": "ROUTER_PORT=443 DEBUG=true CERTIFICATE=serverDev.cert PRIVATE_KEY=serverDev.key node index.js"
   },
   "dependencies": {
     "@jsdevtools/readdir-enhanced": "^6.0.4",
@@ -26,6 +26,7 @@
     "validator": "^13.5.2"
   },
   "devDependencies": {
+    "devcert": "^1.1.3",
     "nodemon": "^2.0.6"
   }
 }
