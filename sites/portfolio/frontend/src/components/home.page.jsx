@@ -4,6 +4,8 @@ import {
     SiGithub,
     SiLinkedin
 } from 'react-icons/si';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const Projects = () => {
     const [projects, setProjects] = useState(null);
@@ -16,7 +18,6 @@ const Projects = () => {
             axios({
                 method: 'get',
                 url: 'https://api.dd.tech/projects',
-
             })
                 .then((res) => {
                     setProjects(res.data);
@@ -30,15 +31,28 @@ const Projects = () => {
                 });
         }
     })
-    if (projects === null || didCall === false) {
-        return <i>Loading...</i>;
-    } else if (projects.length === 0) {
-        return <i>Projects coming soon!</i>;
-    } else {
-        return (
-            <h1>Wow!</h1>
-        );
-    }
+    return (
+        <Carousel centerMode dynamicHeight>
+            <div className="h-16 w-6">
+                hi!!!
+            </div>
+            <div className="h-16 w-12">
+                Hello!!!
+            </div>
+            <div className="h-16 w-12">
+                uwu!!!
+            </div>
+        </Carousel>
+    );
+    // if (projects === null || didCall === false) {
+    //     return <i>Loading...</i>;
+    // } else if (projects.length === 0) {
+    //     return <i>Projects coming soon!</i>;
+    // } else {
+    //     return (
+    //         <h1>Wow!</h1>
+    //     );
+    // }
 }
 
 const HomePage = () => (
@@ -51,7 +65,7 @@ const HomePage = () => (
                     <div className="grid grid-cols-6 gap-1">
                         <b className="col-span-6 md:col-span-1">Languages:</b>
                         <p className="col-span-full md:col-span-5 mt-2 md:mt-0 md:text-left mb-4">
-                            JavaScript (ES5/ES6+), Python, Java, Action Script 3, Pascal
+                            JavaScript (ES5/ES6+), Python, Action Script 3, Java, Pascal
                         </p>
                         <b className="col-span-6 md:col-span-1">Frontend:</b>
                         <p className="col-span-full md:col-span-5 mt-2 md:mt-0 md:text-left mb-4">

@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 const config = {
   entry: [
@@ -26,7 +26,7 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              importLoaders: 1,
             }
           },
           'postcss-loader'
@@ -66,7 +66,7 @@ const config = {
       appMountId: 'app',
       filename: 'index.html'
     }),
-    new CleanWebpackPlugin()
+    new LodashModuleReplacementPlugin
   ],
   optimization: {
     runtimeChunk: 'single',
