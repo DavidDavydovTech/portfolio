@@ -74,7 +74,7 @@ const projectSchema = Schema({
     type: [String],
     required: true,
   },
-  author: {
+  authorId: {
     type: String,
     required: true,
   },

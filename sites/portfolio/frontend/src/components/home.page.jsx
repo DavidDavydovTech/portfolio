@@ -4,8 +4,8 @@ import {
     SiGithub,
     SiLinkedin
 } from 'react-icons/si';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
 
 const Projects = () => {
     const [projects, setProjects] = useState(null);
@@ -31,28 +31,36 @@ const Projects = () => {
                 });
         }
     })
-    return (
-        <Carousel centerMode dynamicHeight>
-            <div className="h-16 w-6">
-                hi!!!
-            </div>
-            <div className="h-16 w-12">
-                Hello!!!
-            </div>
-            <div className="h-16 w-12">
-                uwu!!!
-            </div>
-        </Carousel>
-    );
-    // if (projects === null || didCall === false) {
-    //     return <i>Loading...</i>;
-    // } else if (projects.length === 0) {
-    //     return <i>Projects coming soon!</i>;
-    // } else {
-    //     return (
-    //         <h1>Wow!</h1>
-    //     );
-    // }
+    if (projects === null || didCall === false) {
+        return <i>Loading...</i>;
+    } else if (projects.length === 0) {
+        return <i>Projects coming soon!</i>;
+    } else {
+        return (
+            <Carousel
+                plugins={[
+                    'centered',
+                    // 'infinite',
+                    {
+                        resolve: slidesToShowPlugin,
+                        options: {
+                            numberOfSlides: 3,
+                        },
+                    },
+                ]}
+            >
+                {
+                    projects.map( e => {
+                        return (
+                            <div className="rounded-lg bg-gray-50 dark:bg-gray-700 shadow-lg p-4 md:p-8">
+                                {e.name}
+                            </div>
+                        );
+                    })
+                }
+            </Carousel>
+        );
+    }
 }
 
 const HomePage = () => (
